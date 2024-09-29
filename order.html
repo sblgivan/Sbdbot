@@ -3,32 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Bots</title>
+    <title>SBL Smart Bots - Order Bot</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="android-loader" id="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <!-- Dynamic Welcome for User -->
+    <div class="greeting" id="dynamicGreeting">Welcome to SBL Smart Bots!</div>
+
+    <!-- Bot Selection -->
+    <div class="order-container">
+        <h2>Choose Your Bot</h2>
+        <form id="orderForm">
+            <label for="botSelect">Select Bot:</label>
+            <select id="botSelect">
+                <option value="bot1">SBL Bot 1</option>
+                <option value="bot2">SBL Bot 2</option>
+                <option value="bot3">SBL Bot 3</option>
+            </select>
+            <br>
+            <label for="botPrice">Price:</label>
+            <input type="text" id="botPrice" value="$20" disabled>
+            <br>
+            <input type="checkbox" id="agreeTerms"> I agree to the terms
+            <button type="submit">Order Now</button>
+        </form>
     </div>
 
-    <div id="orderPage" class="content">
-        <h1 id="dynamicUserGreeting"></h1>
-        <div id="botSelection">
-            <!-- Bot selection form -->
-            <label for="botList">Select a bot:</label>
-            <select id="botList">
-                <!-- Dynamically populated -->
-            </select>
-            <label for="botPrice">Price:</label>
-            <span id="botPrice">$0</span>
-            <input type="checkbox" id="confirmOrder"> Confirm Order
-            <button id="placeOrder">Order Now</button>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>
