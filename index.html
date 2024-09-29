@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SBL Smart Bots</title>
+    <title>SBL Smart Bots - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-    <div class="android-loader" id="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+
+    <!-- Loader -->
+    <div id="loader" class="android-loader">
+        <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <div id="homepage" class="content">
-        <h1 id="dynamicGreeting"></h1>
-        <div id="botList" class="bot-list">
-            <!-- Dynamically generated bots will appear here -->
+    <!-- Dynamic Welcome -->
+    <div class="greeting" id="dynamicGreeting">Welcome to SBL Smart Bots!</div>
+
+    <!-- Homepage Feed -->
+    <div class="homepage-feed">
+        <h2 class="ios-header">Latest Trading Bots</h2>
+        <!-- Content will load dynamically -->
+        <div class="bot-feed" id="botFeed">
+            <!-- Dynamic Bot Entries Go Here -->
         </div>
     </div>
 
     <!-- Floating Action Button (FAB) -->
     <div id="fab" class="fab">
         <i class="fas fa-plus"></i>
-        <ul class="fab-options">
+        <ul class="fab-options" style="display: none;">
             <li id="fabOrder"><i class="fas fa-shopping-cart"></i> Order Bot</li>
             <li id="fabAbout"><i class="fas fa-info-circle"></i> About Us</li>
             <li id="fabSettings"><i class="fas fa-cog"></i> Settings</li>
             <li id="fabHelp"><i class="fas fa-question-circle"></i> Help</li>
         </ul>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
