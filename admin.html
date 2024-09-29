@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>SBL Smart Bots - Admin</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="android-loader" id="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
 
-    <div id="adminPage" class="content">
-        <h1>Welcome, Admin</h1>
+    <div class="greeting" id="dynamicGreeting">Welcome, Admin!</div>
 
-        <!-- Admin FAB Options -->
+    <div class="admin-container">
+        <h2>Admin Panel</h2>
+
+        <!-- FAB for Admin -->
         <div id="fab" class="fab">
             <i class="fas fa-plus"></i>
-            <ul class="fab-options">
-                <li id="fabOrdered"><i class="fas fa-shopping-cart"></i> Ordered Bots</li>
+            <ul class="fab-options" style="display: none;">
+                <li id="fabOrder"><i class="fas fa-shopping-cart"></i> View Orders</li>
                 <li id="fabUpload"><i class="fas fa-upload"></i> Upload Bot</li>
+                <li id="fabEdit"><i class="fas fa-edit"></i> Edit Bots</li>
                 <li id="fabAbout"><i class="fas fa-info-circle"></i> About Us</li>
-                <li id="fabDelete"><i class="fas fa-trash"></i> Delete Uploads</li>
             </ul>
         </div>
 
-        <div id="adminContent">
-            <!-- Admin Content will be dynamically loaded -->
-        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
