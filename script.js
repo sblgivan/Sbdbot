@@ -15,50 +15,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Login Logic
-document.getElementById('loginForm')?.addEventListener('submit', function (e) {
-    e.preventDefault();
+// Slide Menu Logic
+function openSlideMenu() {
+    document.getElementById('slideMenu').style.width = '250px';
+}
 
-    const username = document.getElementById('username').value;
-    const phone = document.getElementById('phone').value;
+function closeSlideMenu() {
+    document.getElementById('slideMenu').style.width = '0';
+}
 
-    // Save user details to localStorage
-    localStorage.setItem('loggedInUser', JSON.stringify({ username, phone }));
-
-    // Check if admin
-    if (phone === '0740035058') {
-        window.location.href = 'admin.html';  // Redirect to admin page
+// Handle Slide Menu Options
+document.getElementById('orderBot').addEventListener('click', function () {
+    const user = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (user) {
+        window.location.href = 'order.html';
     } else {
-        window.location.href = 'order.html';  // Redirect to order page for users
+        // Prompt login for users
+        showLoginPrompt();
     }
 });
 
-// FAB Toggle Logic
-const fab = document.getElementById('fab');
-const fabOptions = document.querySelector('.fab-options');
-
-fab.addEventListener('click', () => {
-    if (fabOptions.style.display === 'none' || fabOptions.style.display === '') {
-        fabOptions.style.display = 'block';  // Show options
-    } else {
-        fabOptions.style.display = 'none';  // Hide options
-    }
-});
-
-// FAB Options Click Events
-document.getElementById('fabOrder')?.addEventListener('click', function () {
-    window.location.href = 'order.html';  // Redirect to order page
-});
-
-document.getElementById('fabAbout')?.addEventListener('click', function () {
+document.getElementById('aboutUs').addEventListener('click', function () {
     showAlert('SBL Smart Bots: The future of trading bots.');
 });
 
-document.getElementById('fabSettings')?.addEventListener('click', function () {
+document.getElementById('settings').addEventListener('click', function () {
     showAlert('Settings are coming soon.');
 });
 
-document.getElementById('fabHelp')?.addEventListener('click', function () {
+document.getElementById('help').addEventListener('click', function () {
     showAlert('How can we assist you? Choose an option or contact support.');
 });
 
@@ -74,4 +59,26 @@ function showAlert(message) {
     document.querySelector('.alert-ok').addEventListener('click', function () {
         alertBox.remove();  // Close the alert
     });
-    }
+}
+
+// Login Prompt Logic
+function showLoginPrompt() {
+    const loginPrompt = document.createElement('div');
+    loginPrompt.classList.add('login-prompt');
+    loginPrompt.innerHTML = `
+        <div class="login-box">
+            <h3>Login to Order</h3>
+            <input type="text" id="username" placeholder="Enter your name">
+            <button id="loginBtn">Login</button>
+        </div>
+    `;
+    document.body.appendChild(loginPrompt);
+
+    document.getElementById('loginBtn').addEventListener('click', function () {
+        const username = document.getElementById('username').value;
+        if (username) {
+            localStorage.setItem('loggedInUser', JSON.stringify({ username }));
+            window.location.href = 'order.html';
+        }
+    });
+                }
