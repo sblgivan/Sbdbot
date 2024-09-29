@@ -48,76 +48,55 @@ body {
     text-align: center;
 }
 
-/* Login Styles */
-.login-container {
-    margin: auto;
-    padding: 30px;
-    max-width: 400px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* FAB Styles */
-.fab {
+/* Slide Menu */
+.slide-menu {
+    height: 100%;
+    width: 0;
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #4CAF50;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    color: white;
-    text-align: center;
-    line-height: 60px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
 }
 
-.fab:hover {
+.slide-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F5F3EE;
+    display: block;
+    transition: 0.3s;
+}
+
+.slide-menu a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    color: #F5F3EE;
+}
+
+/* Slide Menu Trigger */
+.slide-menu-trigger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #4CAF50;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+.slide-menu-trigger:hover {
     background-color: #45a049;
 }
-
-.fab-options {
-    display: none;
-    list-style: none;
-    padding: 0;
-    position: absolute;
-    bottom: 80px;
-    right: 0;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.fab-options li {
-    padding: 10px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.fab-options li:hover {
-    background-color: #4CAF50;
-    color: white;
-    }
