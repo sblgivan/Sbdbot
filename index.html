@@ -20,21 +20,23 @@
     <!-- Homepage Feed -->
     <div class="homepage-feed">
         <h2 class="ios-header">Latest Trading Bots</h2>
-        <!-- Content will load dynamically -->
         <div class="bot-feed" id="botFeed">
             <!-- Dynamic Bot Entries Go Here -->
         </div>
     </div>
 
-    <!-- Floating Action Button (FAB) -->
-    <div id="fab" class="fab">
-        <i class="fas fa-plus"></i>
-        <ul class="fab-options" style="display: none;">
-            <li id="fabOrder"><i class="fas fa-shopping-cart"></i> Order Bot</li>
-            <li id="fabAbout"><i class="fas fa-info-circle"></i> About Us</li>
-            <li id="fabSettings"><i class="fas fa-cog"></i> Settings</li>
-            <li id="fabHelp"><i class="fas fa-question-circle"></i> Help</li>
-        </ul>
+    <!-- Slide Pane Trigger -->
+    <div class="slide-menu-trigger" onclick="openSlideMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Sliding Pane -->
+    <div id="slideMenu" class="slide-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+        <a href="#" id="orderBot">🛒 Order Bot</a>
+        <a href="#" id="aboutUs">📨 About Us</a>
+        <a href="#" id="settings">⚙️ Settings</a>
+        <a href="#" id="help">❓ Help</a>
     </div>
 
     <script src="script.js"></script>
