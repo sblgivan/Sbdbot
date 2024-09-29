@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Login Logic
-document.getElementById('loginForm').addEventListener('submit', function (e) {
+document.getElementById('loginForm')?.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const username = document.getElementById('username').value;
@@ -38,14 +38,31 @@ const fab = document.getElementById('fab');
 const fabOptions = document.querySelector('.fab-options');
 
 fab.addEventListener('click', () => {
-    fabOptions.style.display = fabOptions.style.display === 'none' || fabOptions.style.display === '' ? 'block' : 'none';
+    if (fabOptions.style.display === 'none' || fabOptions.style.display === '') {
+        fabOptions.style.display = 'block';  // Show options
+    } else {
+        fabOptions.style.display = 'none';  // Hide options
+    }
 });
 
-// Help Button Interaction
-document.getElementById('fabHelp').addEventListener('click', function () {
+// FAB Options Click Events
+document.getElementById('fabOrder')?.addEventListener('click', function () {
+    window.location.href = 'order.html';  // Redirect to order page
+});
+
+document.getElementById('fabAbout')?.addEventListener('click', function () {
+    showAlert('SBL Smart Bots: The future of trading bots.');
+});
+
+document.getElementById('fabSettings')?.addEventListener('click', function () {
+    showAlert('Settings are coming soon.');
+});
+
+document.getElementById('fabHelp')?.addEventListener('click', function () {
     showAlert('How can we assist you? Choose an option or contact support.');
 });
 
+// Custom Alert Box
 function showAlert(message) {
     const alertBox = document.createElement('div');
     alertBox.classList.add('alert-box');
@@ -57,4 +74,4 @@ function showAlert(message) {
     document.querySelector('.alert-ok').addEventListener('click', function () {
         alertBox.remove();  // Close the alert
     });
-  }
+    }
