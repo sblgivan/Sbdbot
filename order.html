@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Bots</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="android-loader" id="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div id="orderPage" class="content">
+        <h1 id="dynamicUserGreeting"></h1>
+        <div id="botSelection">
+            <!-- Bot selection form -->
+            <label for="botList">Select a bot:</label>
+            <select id="botList">
+                <!-- Dynamically populated -->
+            </select>
+            <label for="botPrice">Price:</label>
+            <span id="botPrice">$0</span>
+            <input type="checkbox" id="confirmOrder"> Confirm Order
+            <button id="placeOrder">Order Now</button>
+        </div>
+    </div>
+</body>
+</html>
